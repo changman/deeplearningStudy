@@ -52,9 +52,10 @@ def getLottoWinInfo(minDrwNo, maxDrwNo):
                       "총1등당첨금":firstAccumamnt,
                       "1등당첨인원":firstPrzwnerCo,
                       "1등수령액": firstWinamnt}
-        
+    
     df_lotto= pd.DataFrame(lotto_dict)
     return df_lotto
+
 if not os.path.isfile("lotto_940.csv"):
     lotto_df = getLottoWinInfo(939,940)
     lotto_df.to_csv("lotto_940.csv",index=False)
@@ -107,3 +108,7 @@ data_in = data_sum[-(days_in):]
 result = model_best.predict([data_in])
 
 print('input: %s, Predicted: %.3f' %(data_in,result[0]))
+
+
+
+    
