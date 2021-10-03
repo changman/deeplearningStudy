@@ -34,6 +34,8 @@ m.fit(df);
 future=m.make_future_dataframe(periods=365)        # 예측하기
 future.tail()
 forecast=m.predict(future)
+fig1=m.plot(forecast)
+fig2=m.plot_components(forecast)
 
 m.plot(forecast);           
 # %%
